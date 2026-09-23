@@ -1,0 +1,25 @@
+{
+  "name": "field-agent-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "root": "src",
+  "sourceMap": false,
+  "watchPatterns": [
+    "src/**/*",
+    "!src/**/*.spec.ts"
+  ],
+  "npmClient": "npm",
+  "projects": {
+    "app": {
+      "context": "app",
+      "source": "src",
+      "type": "angular"
+    }
+  },
+  "hooks": {
+    "build:after": "npm run capacitor:copy",
+    "serve:after": "npm run capacitor:sync"
+  }
+}
